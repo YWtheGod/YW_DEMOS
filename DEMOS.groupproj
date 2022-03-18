@@ -6,6 +6,18 @@
         <Projects Include="TESTZSTD.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="TESTLZ4.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestLZ4Direct.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestXXHash.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestZSTDDirect.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -23,14 +35,50 @@
     <Target Name="TESTZSTD:Make">
         <MSBuild Projects="TESTZSTD.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TESTLZ4">
+        <MSBuild Projects="TESTLZ4.dproj"/>
+    </Target>
+    <Target Name="TESTLZ4:Clean">
+        <MSBuild Projects="TESTLZ4.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TESTLZ4:Make">
+        <MSBuild Projects="TESTLZ4.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestLZ4Direct">
+        <MSBuild Projects="TestLZ4Direct.dproj"/>
+    </Target>
+    <Target Name="TestLZ4Direct:Clean">
+        <MSBuild Projects="TestLZ4Direct.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestLZ4Direct:Make">
+        <MSBuild Projects="TestLZ4Direct.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestXXHash">
+        <MSBuild Projects="TestXXHash.dproj"/>
+    </Target>
+    <Target Name="TestXXHash:Clean">
+        <MSBuild Projects="TestXXHash.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestXXHash:Make">
+        <MSBuild Projects="TestXXHash.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestZSTDDirect">
+        <MSBuild Projects="TestZSTDDirect.dproj"/>
+    </Target>
+    <Target Name="TestZSTDDirect:Clean">
+        <MSBuild Projects="TestZSTDDirect.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestZSTDDirect:Make">
+        <MSBuild Projects="TestZSTDDirect.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TESTZSTD"/>
+        <CallTarget Targets="TESTZSTD;TESTLZ4;TestLZ4Direct;TestXXHash;TestZSTDDirect"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TESTZSTD:Clean"/>
+        <CallTarget Targets="TESTZSTD:Clean;TESTLZ4:Clean;TestLZ4Direct:Clean;TestXXHash:Clean;TestZSTDDirect:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TESTZSTD:Make"/>
+        <CallTarget Targets="TESTZSTD:Make;TESTLZ4:Make;TestLZ4Direct:Make;TestXXHash:Make;TestZSTDDirect:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
