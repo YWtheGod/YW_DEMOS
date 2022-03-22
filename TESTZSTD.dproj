@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{F4BF1A0A-4D0F-4631-B862-7F15ABD46812}</ProjectGuid>
-        <ProjectVersion>19.3</ProjectVersion>
+        <ProjectVersion>19.4</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
@@ -30,6 +30,16 @@
     </PropertyGroup>
     <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
         <Base_Linux64>true</Base_Linux64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Base)'=='true') or '$(Base_OSX64)'!=''">
+        <Base_OSX64>true</Base_OSX64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSXARM64' and '$(Base)'=='true') or '$(Base_OSXARM64)'!=''">
+        <Base_OSXARM64>true</Base_OSXARM64>
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
@@ -139,6 +149,14 @@ $(PreBuildEvent)]]></PreBuildEvent>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
         <DCC_UsePackage>RESTComponents;emsclientfiredac;DataSnapFireDAC;FireDACADSDriver;FDSQLITEDRV;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;inetdb;emsedge;fmx;FireDACIBDriver;dbexpress;IndyCore;dsnap;emsclient;DataSnapCommon;FireDACCommon;RESTBackendComponents;DataSnapConnectors;soapserver;bindengine;CloudService;FireDACOracleDriver;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;YWRTL;IndySystem;FireDACDb2Driver;FireDACInfxDriver;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;FireDACTDataDriver;soaprtl;DbxCommonDriver;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;rtl;emsserverresource;DbxClientDriver;CustomIPTransport;bindcomp;dbxcds;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;dbrtl;IndyProtocols;FireDACMongoDBDriver;DataSnapServerMidas;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSXARM64)'!=''">
+        <VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0;CFBundleShortVersionString=1.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName);NSHighResolutionCapable=true;LSApplicationCategoryType=public.app-category.utilities;NSLocationUsageDescription=The reason for accessing the location information of the user;NSContactsUsageDescription=The reason for accessing the contacts;NSCalendarsUsageDescription=The reason for accessing the calendar data;NSRemindersUsageDescription=The reason for accessing the reminders;NSCameraUsageDescription=The reason for accessing the camera;NSMicrophoneUsageDescription=The reason for accessing the microphone;NSMotionUsageDescription=The reason for accessing the accelerometer;NSDesktopFolderUsageDescription=The reason for accessing the Desktop folder;NSDocumentsFolderUsageDescription=The reason for accessing the Documents folder;NSDownloadsFolderUsageDescription=The reason for accessing the Downloads folder;NSNetworkVolumesUsageDescription=The reason for accessing files on a network volume;NSRemovableVolumesUsageDescription=The reason for accessing files on a removable volume;NSSpeechRecognitionUsageDescription=The reason for requesting to send user data to Apple&apos;s speech recognition servers</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;fmxase;DBXDb2Driver;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;emsclientfiredac;tethering;svnui;DataSnapFireDAC;JvGlobus;FireDACADSDriver;FDSQLITEDRV;JvPluginSystem;DBXMSSQLDriver;JvMM;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;vcltouch;JvBands;vcldb;bindcompfmx;svn;JvJans;DBXOracleDriver;JvNet;inetdb;JvAppFrm;FmxTeeUI;emsedge;JvDotNetCtrls;fmx;FireDACIBDriver;fmxdae;vcledge;JvWizards;FireDACDBXDriver;dbexpress;IndyCore;vclx;JvPageComps;dsnap;emsclient;DataSnapCommon;FireDACCommon;JvDB;RESTBackendComponents;DataSnapConnectors;VCLRESTComponents;soapserver;JclDeveloperTools;vclie;bindengine;DBXMySQLDriver;CloudService;FireDACOracleDriver;FireDACMySQLDriver;DBXFirebirdDriver;JvCmp;JvHMI;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;IndyIPCommon;bindcompdbx;JvCustom;YWRTL;vcl;IndyIPServer;DBXSybaseASEDriver;JvXPCtrls;IndySystem;FireDACDb2Driver;dsnapcon;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;TeeDB;FireDAC;Jcl;JvCore;emshosting;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;JvDlgs;JvRuntimeDesign;JvManagedThreads;Tee;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;vclwinx;FireDACDSDriver;rtl;emsserverresource;DbxClientDriver;JvTimeFramework;DBXSybaseASADriver;CustomIPTransport;vcldsnap;JvSystem;JvStdCtrls;bindcomp;appanalytics;DBXInformixDriver;IndyIPClient;bindcompvcl;TeeUI;JvDocking;dbxcds;VclSmp;JvPascalInterpreter;adortl;FireDACODBCDriver;JclVcl;DataSnapIndy10ServerTransport;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;inetdbxpress;FireDACMongoDBDriver;JvControls;JvPrintPreview;JclContainers;DataSnapServerMidas;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -229,18 +247,42 @@ $(PreBuildEvent)]]></PreBuildEvent>
                 <Platform value="Android64">False</Platform>
                 <Platform value="iOSDevice64">False</Platform>
                 <Platform value="Linux64">True</Platform>
+                <Platform value="OSX64">False</Platform>
+                <Platform value="OSXARM64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">True</Platform>
             </Platforms>
             <Deployment Version="3">
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Linux64\Release\glibc-2.31.tar" Configuration="Debug" Class="File">
                     <Platform Name="Linux64">
                         <RemoteName>glibc-2.31.tar</RemoteName>
                         <Overwrite>false</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
-                    <Platform Name="iOSSimulator">
+                <DeployFile LocalName="Linux64\Release\glibc-2.31.tar" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>glibc-2.31.tar</RemoteName>
+                        <Overwrite>false</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Linux64\Release\TESTZSTD" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>TESTZSTD</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -250,35 +292,13 @@ $(PreBuildEvent)]]></PreBuildEvent>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
-                    <Platform Name="OSX32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
-                    <Platform Name="iOSSimulator">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Linux64\Release\TESTZSTD" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Linux64">
-                        <RemoteName>TESTZSTD</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win64\Release\TESTZSTD.exe" Configuration="Release" Class="ProjectOutput">
+                <DeployFile LocalName="Win64\Debug\TESTZSTD.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>TESTZSTD.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Linux64\Release\glibc-2.31.tar" Configuration="Release" Class="File">
-                    <Platform Name="Linux64">
-                        <RemoteName>glibc-2.31.tar</RemoteName>
-                        <Overwrite>false</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win64\Debug\TESTZSTD.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win64\Release\TESTZSTD.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>TESTZSTD.exe</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -1101,17 +1121,17 @@ $(PreBuildEvent)]]></PreBuildEvent>
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSXARM64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
@@ -1144,6 +1164,22 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Linux64'">
+        <PreBuildEvent>copy $(PROJECTDIR)\DATA.PART.1 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.2 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.3 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.4 $(OUTPUTDIR)</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='OSX64'">
+        <PreBuildEvent>copy $(PROJECTDIR)\DATA.PART.1 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.2 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.3 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.4 $(OUTPUTDIR)</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='OSXARM64'">
         <PreBuildEvent>copy $(PROJECTDIR)\DATA.PART.1 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.2 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.3 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.4 $(OUTPUTDIR)</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
@@ -1192,6 +1228,22 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Linux64'">
+        <PreBuildEvent>copy $(PROJECTDIR)\DATA.PART.1 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.2 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.3 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.4 $(OUTPUTDIR)</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='OSX64'">
+        <PreBuildEvent>copy $(PROJECTDIR)\DATA.PART.1 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.2 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.3 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.4 $(OUTPUTDIR)</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='OSXARM64'">
         <PreBuildEvent>copy $(PROJECTDIR)\DATA.PART.1 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.2 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.3 $(OUTPUTDIR)&amp;&amp;copy $(PROJECTDIR)\DATA.PART.4 $(OUTPUTDIR)</PreBuildEvent>
         <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
         <PreLinkEvent/>
