@@ -18,6 +18,9 @@
         <Projects Include="TestZSTDDirect.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="TESTZSTDVCL.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -71,14 +74,23 @@
     <Target Name="TestZSTDDirect:Make">
         <MSBuild Projects="TestZSTDDirect.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TESTZSTDVCL">
+        <MSBuild Projects="TESTZSTDVCL.dproj"/>
+    </Target>
+    <Target Name="TESTZSTDVCL:Clean">
+        <MSBuild Projects="TESTZSTDVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TESTZSTDVCL:Make">
+        <MSBuild Projects="TESTZSTDVCL.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TESTZSTD;TESTLZ4;TestLZ4Direct;TestXXHash;TestZSTDDirect"/>
+        <CallTarget Targets="TESTZSTD;TESTLZ4;TestLZ4Direct;TestXXHash;TestZSTDDirect;TESTZSTDVCL"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TESTZSTD:Clean;TESTLZ4:Clean;TestLZ4Direct:Clean;TestXXHash:Clean;TestZSTDDirect:Clean"/>
+        <CallTarget Targets="TESTZSTD:Clean;TESTLZ4:Clean;TestLZ4Direct:Clean;TestXXHash:Clean;TestZSTDDirect:Clean;TESTZSTDVCL:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TESTZSTD:Make;TESTLZ4:Make;TestLZ4Direct:Make;TestXXHash:Make;TestZSTDDirect:Make"/>
+        <CallTarget Targets="TESTZSTD:Make;TESTLZ4:Make;TestLZ4Direct:Make;TestXXHash:Make;TestZSTDDirect:Make;TESTZSTDVCL:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
