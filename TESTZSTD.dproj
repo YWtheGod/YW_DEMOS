@@ -103,6 +103,7 @@ copy $(PROJECTDIR)\DATA.PART.3 $(OUTPUTDIR)
 copy $(PROJECTDIR)\DATA.PART.4 $(OUTPUTDIR)
 $(PreBuildEvent)]]></PreBuildEvent>
         <DCC_MaxStackSize>4194304</DCC_MaxStackSize>
+        <DCC_MinStackSize>163840</DCC_MinStackSize>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;tethering;DataSnapFireDAC;FDSQLITEDRV;bindcompfmx;FmxTeeUI;fmx;FireDACIBDriver;FireDACDBXDriver;dbexpress;IndyCore;dsnap;emsclient;DataSnapCommon;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;IndyIPCommon;bindcompdbx;YWRTL;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;DataSnapNativeClient;FireDACDSDriver;rtl;DbxClientDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
@@ -196,6 +197,8 @@ $(PreBuildEvent)]]></PreBuildEvent>
         <Debugger_DebugSourcePath>D:\Users\YW\Documents\Embarcadero\Studio\Projects\YWLIB\zstd\;D:\Users\YW\Documents\Embarcadero\Studio\Projects\YWLIB\XXHASH4Delphi\;D:\Users\YW\Documents\Embarcadero\Studio\Projects\YWLIB\RTL\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
+        <DCC_MinStackSize>163840</DCC_MinStackSize>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>

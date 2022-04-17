@@ -36,12 +36,7 @@ begin
     M.Position := 0;
     D := TZSTDDecompressStream.Create(M,false);
     try
-//      F.CopyFrom(D,0,128*1024);
-      var s : Cardinal;
-      repeat
-        s := D.Read(buf,65536);
-        F.Write(buf,s);
-      until s<65536;
+      F.CopyFrom(D,0,128*1024);
     finally
       D.Free;
     end;

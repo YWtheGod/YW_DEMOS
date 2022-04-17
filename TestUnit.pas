@@ -6,7 +6,7 @@ uses
   classes,
   zstd,
   xxhash,
-  system.zlib,
+  zlib,
   System.Diagnostics  ;
 
 procedure DoTest; cdecl;
